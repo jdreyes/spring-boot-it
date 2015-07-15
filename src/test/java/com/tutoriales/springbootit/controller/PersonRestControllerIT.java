@@ -48,7 +48,7 @@ public class PersonRestControllerIT {
         final Person person = response.getBody();
 
         assertThat(person, nullValue());
-        assertThat(response.getStatusCode(), is(HttpStatus.NO_CONTENT));
+        assertThat(response.getStatusCode(), is(HttpStatus.NOT_FOUND));
     }
 
     private String getBaseUrl() {

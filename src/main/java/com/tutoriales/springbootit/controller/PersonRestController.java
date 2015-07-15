@@ -21,7 +21,7 @@ public class PersonRestController {
 
     {
         personList.add(new Person(1L, "Pepe", "Ruiz", "666-555-444"));
-        personList.add(new Person(2L, "Pepe", "Ruiz", "666-555-444"));
+        personList.add(new Person(2L, "Paco", "Rodríguez", "633-222-444"));
     }
 
     @RequestMapping(value = "/person/{id}", method = RequestMethod.GET)
@@ -40,7 +40,7 @@ public class PersonRestController {
     }
 
     @ExceptionHandler(PersonException.class)
-    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
     public void personExceptionHandler(final Exception exception) {
         LOG.warn("REST Service exception: " + exception.getMessage());
     }
